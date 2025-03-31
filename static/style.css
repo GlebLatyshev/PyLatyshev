@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2 {
+    color: #333;
+}
+h1 {
+    margin-bottom: 10px;
+}
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+p {
+    margin: 5px 0;
+}
+.contact-info {
+    margin-bottom: 20px;
+}
+.skills, .experience, .education {
+    margin-bottom: 20px;
+}
+.skills ul, .experience ul, .education ul {
+    list-style-type: none;
+    padding: 0;
+}
+.skills li, .experience li, .education li {
+    background: #e4e4e4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
