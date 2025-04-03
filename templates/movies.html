@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Любимые фильмы</h1>
+<ul>
+    {% for movie in movies %}
+    <li>
+        <strong>{{ movie.title }}</strong> ({{ movie.year }})<br>
+        Режиссер: {{ movie.director }}<br>
+        Жанр: {{ movie.genre }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

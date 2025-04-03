@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Любимая музыка</h1>
+<ul>
+    {% for song in songs %}
+    <li>
+        {{ song.title }} - {{ song.album.artist.name }}
+        ({{ song.album.title }}, {{ song.album.year }})
+        [{{ song.length }}]
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
