@@ -1,36 +1,12 @@
-from flask_sqlalchemy import SQLAlchemy
+from database import db
 
-db = SQLAlchemy()
-
-class Artist(db.Model):
+class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    gender = db.Column(db.String(10))
+    age = db.Column(db.Integer)
+    hair_color = db.Column(db.String(20))
+    eye_color = db.Column(db.String(20))
 
-class Album(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    year = db.Column(db.String(4), nullable=False)
-    artist_id = db.Column(db.Integer, db.ForeignKey('artist.id'), nullable=False)
-    artist = db.relationship('Artist', backref=db.backref('albums', lazy=True))
-
-class Song(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    length = db.Column(db.String(8), nullable=False)
-    track_number = db.Column(db.Integer, nullable=False)
-    album_id = db.Column(db.Integer, db.ForeignKey('album.id'), nullable=False)
-    album = db.relationship('Album', backref=db.backref('songs', lazy=True))
-
-class Movie(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    year = db.Column(db.String(4), nullable=False)
-    director = db.Column(db.String(100), nullable=False)
-    genre = db.Column(db.String(100), nullable=False)
-
-class Book(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    author = db.Column(db.String(100), nullable=False)
-    year = db.Column(db.String(4), nullable=False)
-    genre = db.Column(db.String(50), nullable=False)
+    def __repr__(self):
+        return f'<Student {self.name}>'

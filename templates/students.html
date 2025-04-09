@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список студентов группы</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Список студентов группы</h1>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Пол</th>
+            <th>Возраст</th>
+            <th>Цвет волос</th>
+            <th>Цвет глаз</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.hair_color }}</td>
+            <td>{{ student.eye_color }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
